@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flex</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: pink;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    background-color: #333;
+    justify-content: space-around;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: stretch;
+}
+
+.navbar a:hover {
+    animation: button 1s;
+}
+
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side {
+    flex: 30%;                          /* !!! */
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.main {
+    flex: 70%;                          /* !!! */
+    background-color: white;
+    padding: 20px;
+}
+
+.img {
+     background-color: #aaa;
+     width: 100%;                       /* !!! */
+     padding: 20px;
+}
+
+.g_header {
+    padding: 20px;
+    text-align: center;
+    background: pink;
+    color: white;
+}
+
+.g_row {
+    display: flex;
+    flex-wrap: wrap;
+
+    line-height: 0;
+    margin: 10px;
+}
+
+.g_column {                              /* !!! */
+    flex: 25%;
+    max-width: 25%;
+
+    text-align: center;
+    line-height: 0;
+}
+
+.pic {
+    line-height: 0;
+    padding: 10px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+
+
+/* IMPORTANT!!!! ________________________ :) */
+
+/* sets the min value before flexing */
+
+@media (max-width: 1000px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+
+/* makes 2 colums */
+
+@media (max-width: 1000px) {
+  .g_column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* makes 1 column */
+
+@media (max-width: 600px) {
+  .g_column {
+    flex: 100%; 
+    max-width: 100%;
+  }
+}
+
+@keyframes button {
+  from {color: #ddd;}
+  to {color: lightslategrey;}
+}
+
+@keyframes button {
+  from {color: lightslategrey;}
+  to {color: #ddd;}
+}
+
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Our beautiful website.</h1>
+  <p><b>Flex on you.</b></p>
+</div>
+
+
+
+<!--  Nav Bar -->
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#">Gallery</a>
+  <a href="#">Instagram</a>
+  <a href="#">XXX</a>
+</div>
+
+
+
+<!-- Top section -->
+<div class="row">
+  <div class="side">
+    <h2>Title</h2>
+    <div class="img" style="height:200px;">Image</div>
+    <p>Some text about this box, no idea.</p>
+  </div>
+  <div class="main">
+    <h2>This is an other title.</h5>
+    <div class="img" style="height:200px;">Image</div>
+    <p>Some text again...</p>
+    <p>Bla bla bla, interesting huh? Sorry for being boring, I had no idea what should I write here.</p>
+  </div>
+</div>
+
+
+
+<div class="g_header">
+    <h1>Gallery</h1>
+</div>
+
+
+
+<!-- Photo Grid -->
+<div class="g_row"> 
+    <div class="g_column">
+        <h2>Shoes</h2>
+        <div class="pic"><img src="shoes.png" style="width:100%"></div>
+        <div class="pic"><img src="shoes.png" style="width:100%"></div>
+        <div class="pic"><img src="shoes.png" style="width:100%"></div>
+    </div>
+    
+    <div class="g_column">
+        <h2>Idk</h2>
+        <div class="pic"><img src="wrap.png" style="width:100%"></div>
+        <div class="pic"><img src="wrap.png" style="width:100%"></div>
+        <div class="pic"><img src="wrap.png" style="width:100%"></div>
+    </div> 
+     
+    <div class="g_column">
+        <h2>Station</h2>
+        <div class="pic"><img src="ps.png" style="width:100%"></div>
+        <div class="pic"><img src="ps.png" style="width:100%"></div>
+        <div class="pic"><img src="ps.png" style="width:100%"></div>
+    </div>
+    
+    <div class="g_column">
+        <h2>Reloading</h2>
+        <div class="pic"><img src="gun.png" style="width:100%"></div>
+        <div class="pic"><img src="gun.png" style="width:100%"></div>
+        <div class="pic"><img src="flex.png" style="width:100%"></div>
+    </div>
+  </div>
+
+
+
+<!-- Footer -->
+<div class="footer">
+  <h2>The End. Thanks for visiting.</h2>
+</div>
+
+</body>
+</html>
+
